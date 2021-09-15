@@ -10,12 +10,6 @@ variable "description" {
   default     = "tf-ga-slb-ecs-cdn-oss-description"
 }
 
-variable "available_disk_category" {
-  description = "The specification of available disk category."
-  type        = string
-  default     = "cloud_efficiency"
-}
-
 variable "instance_type" {
   description = "The specification of the instance type."
   type        = string
