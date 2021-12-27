@@ -1,63 +1,29 @@
+#vpc
 variable "name" {
   description = "The specification of module name."
   type        = string
-  default     = "tf-ga-slb-ecs-cdn-oss"
+  default     = ""
 }
 
-variable "description" {
-  description = "The specification of module description."
+variable "vpc_cidr_block" {
+  description = "The cidr block of VPC information."
   type        = string
-  default     = "tf-ga-slb-ecs-cdn-oss-description"
+  default     = "172.16.0.0/16"
 }
 
-variable "instance_type" {
-  description = "The specification of the instance type."
+variable "vs_cidr_block" {
+  description = "The cidr block of VSwitch information."
   type        = string
-  default     = "ecs.n4.large"
+  default     = "172.16.0.0/21"
 }
 
-variable "system_disk_category" {
-  description = "The specification of the system disk category."
+variable "availability_zone" {
+  description = "The available zone to launch modules."
   type        = string
-  default     = "cloud_efficiency"
+  default     = ""
 }
 
-variable "system_disk_name" {
-  description = "The specification of the system disk name."
-  type        = string
-  default     = "system_disk"
-}
-
-variable "system_disk_description" {
-  description = "The specification of the system disk description."
-  type        = string
-  default     = "system_disk_description"
-}
-
-variable "image_id" {
-  description = "The specification of the image id."
-  type        = string
-  default     = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
-}
-
-variable "internet_max_bandwidth_out" {
-  description = "The specification of the internet max bandwidth out."
-  type        = number
-  default     = 10
-}
-
-variable "ecs_size" {
-  description = "The specification of the ecs size."
-  type        = number
-  default     = 1200
-}
-
-variable "category" {
-  description = "The specification of the category."
-  type        = string
-  default     = "cloud_efficiency"
-}
-
+#alicloud_slb_load_balancer
 variable "slb_address_type" {
   description = "The specification of the slb intranet."
   type        = string
@@ -73,33 +39,10 @@ variable "slb_spec" {
 variable "slb_tags_info" {
   description = "The specification of the slb tags info."
   type        = string
-  default     = "create for internet"
-}
-
-variable "availability_zone" {
-  description = "The available zone to launch modules."
-  type        = string
   default     = ""
 }
 
-variable "vpc_cidr_block" {
-  description = "The cidr block of VPC information."
-  type        = string
-  default     = "192.168.1.0/24"
-}
-
-variable "vs_cidr_block" {
-  description = "The cidr block of VSwitch information."
-  type        = string
-  default     = "192.168.1.0/24"
-}
-
-variable "dns_name" {
-  description = "The name of DNS."
-  type        = string
-  default     = "starmove.com"
-}
-
+#alicloud_ga_accelerator
 variable "ga_duration" {
   description = "The duration of GA."
   type        = number
@@ -118,20 +61,101 @@ variable "ga_spec" {
   default     = "1"
 }
 
-variable "cdn_internet_charge_type" {
-  description = "The internet charge type of CDN."
+#alicloud_instance
+variable "instance_type" {
+  description = "The specification of the instance type."
   type        = string
-  default     = "PayByTraffic"
+  default     = ""
 }
 
+variable "system_disk_category" {
+  description = "The specification of the system disk category."
+  type        = string
+  default     = "cloud_efficiency"
+}
+
+variable "system_disk_name" {
+  description = "The specification of the system disk name."
+  type        = string
+  default     = ""
+}
+
+variable "system_disk_description" {
+  description = "The specification of the system disk description."
+  type        = string
+  default     = ""
+}
+
+variable "image_id" {
+  description = "The specification of the image id."
+  type        = string
+  default     = ""
+}
+
+variable "internet_max_bandwidth_out" {
+  description = "The specification of the internet max bandwidth out."
+  type        = number
+  default     = 10
+}
+
+variable "data_disks_name" {
+  description = "The name of the data disk."
+  type        = string
+  default     = ""
+}
+
+variable "ecs_size" {
+  description = "The specification of the ecs size."
+  type        = number
+  default     = 1200
+}
+
+variable "category" {
+  description = "The specification of the category."
+  type        = string
+  default     = "cloud_efficiency"
+}
+
+variable "description" {
+  description = "The specification of module description."
+  type        = string
+  default     = ""
+}
+
+variable "encrypted" {
+  description = "Encrypted the data in this disk."
+  type        = bool
+  default     = false
+}
+
+#alicloud_oss_bucket
 variable "oss_bucket" {
   description = "The bucket name of OSS."
   type        = string
-  default     = "tf-test-aliyun-ga"
+  default     = ""
 }
 
 variable "oss_acl" {
   description = "The bucket acl of OSS."
   type        = string
   default     = "private"
+}
+
+#alicloud_cdn_service
+variable "cdn_service_enable" {
+  description = "Setting the value to On to enable the service."
+  type        = string
+  default     = "On"
+}
+
+variable "cdn_internet_charge_type" {
+  description = "The internet charge type of CDN."
+  type        = string
+  default     = "PayByTraffic"
+}
+
+variable "dns_name" {
+  description = "The name of DNS."
+  type        = string
+  default     = ""
 }
