@@ -154,8 +154,3 @@ variable "cdn_internet_charge_type" {
   default     = "PayByTraffic"
 }
 
-variable "dns_name" {
-  description = "The name of DNS."
-  type        = string
-  default     = ""
-}
