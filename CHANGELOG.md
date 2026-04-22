@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/alibabacloud-automation/terraform-alicloud-ga-slb-ecs-cdn-oss/compare/v2.0.1...v3.0.0) (2026-04-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* add provider version constraint for aliyun/alicloud
+
+### Features
+
+* add provider version constraint for aliyun/alicloud ([4beceb3](https://github.com/alibabacloud-automation/terraform-alicloud-ga-slb-ecs-cdn-oss/commit/4beceb36761cfb4ae47f06c3d2b9f8772d7a8a5d))
+
 ## [2.0.1](https://github.com/alibabacloud-automation/terraform-alicloud-ga-slb-ecs-cdn-oss/compare/v2.0.0...v2.0.1) (2025-10-16)
 
 
