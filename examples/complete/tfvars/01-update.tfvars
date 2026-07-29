@@ -12,9 +12,6 @@ system_disk_name           = "test_system_disk"
 system_disk_description    = "test_system_disk_description"
 internet_max_bandwidth_out = "20"
 
-#alicloud_oss_bucket
-oss_acl = "public-read"
-
 #alicloud_cdn_service
 cdn_service_enable       = "Off"
 cdn_internet_charge_type = "PayByBandwidth"
