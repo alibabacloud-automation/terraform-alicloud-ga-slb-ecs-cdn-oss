@@ -18,6 +18,12 @@ data "alicloud_instance_types" "default" {
   instance_type_family = "ecs.g9i"
 }
 
+resource "random_string" "oss_bucket_suffix" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
 module "example" {
   source = "../.."
 
@@ -51,7 +57,7 @@ module "example" {
   encrypted                  = true
 
   #alicloud_oss_bucket
-  oss_bucket = "bucket-terraform-20211227"
+  oss_bucket = "bucket-terraform-20211227-${random_string.oss_bucket_suffix.result}"
   oss_acl    = var.oss_acl
 
   #alicloud_cdn_service
